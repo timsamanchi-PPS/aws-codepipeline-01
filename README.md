@@ -1,7 +1,11 @@
 # PPS aws codepipeline demo
 project to demo aws codepipleline 
 
-## requirements
+## infrastructure requirements
 S3 bucket for terraform.tfstate file  
-Source code  
+infrastructure source code 
+
+## aws-codepipeline requirements
+description
+
 
