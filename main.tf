@@ -99,5 +99,14 @@ resource "aws_security_group" "codepipeline-SG" {
     }
 }
 # create Ubuntu webserver
-# create elstic IP address
+# create elastic IP address
 # create webserver NIC
+resource "aws_network_interface" "webserver-NIC" {
+    subnet_id = aws_subnet.codepipeline-PUB.id
+    private_ips = ["10.10.0.25"]
+    security_groups = [aws_security_group.codepipeline-SG.id]
+    
+    tags = {
+      Name = "webserver-NIC"
+    }
+}
