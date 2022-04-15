@@ -9,5 +9,5 @@ infrastructure source code
 aws codebuild  
 aws codedeploy  
 aws codepipeline  
-output S3 bucket for artefacts  
+S3 output bucket for artefacts  
 

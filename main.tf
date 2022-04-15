@@ -116,3 +116,26 @@ resource "aws_eip" "webserver-IP" {
     associate_with_private_ip = "10.10.0.25"
     depends_on = [aws_internet_gateway.codepipeline-IGW]  
 }
+resource "aws_instance" "Ubuntu-webserver" {
+    ami = "ami-0015a39e4b7c0966f"
+    instance_type = "t2.micro"
+    availability_zone = "eu-west-2a"
+    key_name = "aws-codepipeline-main-key"
+
+    network_interface {
+        device_index = 0
+        network_interface_id = aws_network_interface.webserver-NIC.id
+    }
+
+    user_data = <<-EOF
+        #!/bin/bash
+        sudo apt update -y
+        sudo apt install apache2 -y
+        sudo systemctl start apache2
+        sudo bash -c 'echo **** MY FIRST WEBSERVER HelloWorld **** > /var/www/htm/index.html'
+    EOF
+
+    tags = {
+       Name = "Ubuntu-webserver"
+    }
+}
