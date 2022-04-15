@@ -98,3 +98,6 @@ resource "aws_security_group" "codepipeline-SG" {
       Name = "codepipeline-SG"
     }
 }
+# create Ubuntu webserver
+# create elstic IP address
+# create webserver NIC
