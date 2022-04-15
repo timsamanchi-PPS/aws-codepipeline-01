@@ -110,3 +110,9 @@ resource "aws_network_interface" "webserver-NIC" {
       Name = "webserver-NIC"
     }
 }
+resource "aws_eip" "webserver-IP" {
+    vpc = true
+    network_interface = aws_network_interface.webserver-NIC.id
+    associate_with_private_ip = "10.10.0.25"
+    depends_on = [aws_internet_gateway.codepipeline-IGW]  
+}
