@@ -6,6 +6,8 @@ S3 bucket for terraform.tfstate file
 infrastructure source code 
 
 ## aws-codepipeline requirements
-description
-
+aws codebuild  
+aws codedeploy  
+aws codepipeline  
+output S3 bucket for artefacts  
 
