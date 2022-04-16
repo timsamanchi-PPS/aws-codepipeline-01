@@ -9,5 +9,8 @@ infrastructure source code
 aws codebuild  
 aws codedeploy  
 aws codepipeline  
-S3 output bucket for artefacts  
+S3 output bucket for artifacts  
+
+### github repository
+https://github.com/timsamanchi-PPS/aws-codepipeline-01.git
 

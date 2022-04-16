@@ -19,10 +19,6 @@ provider "aws" {
 # create codepipeline VPC
 resource "aws_vpc" "codepipeline-VPC" {
     cidr_block = "10.10.0.0/16"
-    
-    enable_dns_hostnames = true
-    enable_dns_support = true
-
     tags = {
       Name = "codepipeline-VPC"
     }
@@ -134,7 +130,6 @@ resource "aws_instance" "Ubuntu-webserver" {
         sudo systemctl start apache2
         sudo bash -c 'echo **** MY FIRST WEBSERVER HelloWorld **** > /var/www/htm/index.html'
     EOF
-
     tags = {
        Name = "Ubuntu-webserver"
     }
